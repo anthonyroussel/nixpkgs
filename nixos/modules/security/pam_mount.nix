@@ -30,6 +30,15 @@ in
         '';
       };
 
+      disableInteractive = mkOption {
+        default = true;
+        type = types.bool;
+        description = ''
+          Set to prompt a message and wait before testing the presence of a U2F device.
+          Recommended if your device doesn’t have a tactile trigger.
+        '';
+      };
+
       additionalSearchPaths = mkOption {
         type = types.listOf types.package;
         default = [];

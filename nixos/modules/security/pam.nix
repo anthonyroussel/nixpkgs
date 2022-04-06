@@ -274,7 +274,7 @@ let
         default = false;
         type = types.bool;
         description = ''
-          Wheather the delay after typing a wrong password should be disabled.
+          Whether the delay after typing a wrong password should be disabled.
         '';
       };
 
@@ -490,7 +490,7 @@ let
                 auth optional ${pkgs.ecryptfs}/lib/security/pam_ecryptfs.so unwrap
               '' +
               optionalString cfg.pamMount ''
-                auth optional ${pkgs.pam_mount}/lib/security/pam_mount.so disable_interactive
+                auth optional ${pkgs.pam_mount}/lib/security/pam_mount.so ${optionalString config.security.pam.mount.disableInteractive "disable_interactive"}
               '' +
               optionalString cfg.enableKwallet ''
                auth optional ${pkgs.plasma5Packages.kwallet-pam}/lib/security/pam_kwallet5.so kwalletd=${pkgs.plasma5Packages.kwallet.bin}/bin/kwalletd5
@@ -578,7 +578,7 @@ let
             session optional ${pkgs.ecryptfs}/lib/security/pam_ecryptfs.so
           '' +
           optionalString cfg.pamMount ''
-            session optional ${pkgs.pam_mount}/lib/security/pam_mount.so disable_interactive
+            session optional ${pkgs.pam_mount}/lib/security/pam_mount.so ${optionalString config.security.pam.mount.disableInteractive "disable_interactive"}
           '' +
           optionalString use_ldap ''
             session optional ${pam_ldap}/lib/security/pam_ldap.so
