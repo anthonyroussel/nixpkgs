@@ -10,11 +10,11 @@
 
 let
   pname = "pgadmin";
-  version = "6.12";
+  version = "6.13";
 
   src = fetchurl {
     url = "https://ftp.postgresql.org/pub/pgadmin/pgadmin4/v${version}/source/pgadmin4-${version}.tar.gz";
-    sha256 = "sha256-cO7GdZDfJ0pq1jpMyrVy0UM49WhrKOIJOmMJauSkbyo=";
+    hash = "sha256-vLItmE76R1IzgMYEGEvIeOmbfQQac5WK12AkkZknTFU=";
   };
 
   yarnDeps = mkYarnModules {
@@ -26,7 +26,7 @@ let
   };
 
   # move buildDeps here to easily pass to test suite
-  buildDeps = with pythonPackages; [
+  buildDeps = with python3.pkgs; [
     flask
     flask-gravatar
     flask_login
@@ -72,20 +72,9 @@ let
     azure-identity
   ];
 
-  # override necessary on pgadmin4 6.12
-  pythonPackages = python3.pkgs.overrideScope (final: prev: rec {
-    werkzeug = prev.werkzeug.overridePythonAttrs (oldAttrs: rec {
-      version = "2.0.3";
-      src = oldAttrs.src.override {
-        inherit version;
-        sha256 = "sha256-uGP4/wV8UiFktgZ8niiwQRYbS+W6TQ2s7qpQoWOCLTw=";
-      };
-    });
-  });
-
 in
 
-pythonPackages.buildPythonApplication rec {
+python3.pkgs.buildPythonApplication rec {
   inherit pname version src;
 
   # from Dockerfile
@@ -156,10 +145,10 @@ pythonPackages.buildPythonApplication rec {
     cp -v ../pkg/pip/setup_pip.py setup.py
   '';
 
-  nativeBuildInputs = with pythonPackages; [ cython pip ];
+  nativeBuildInputs = with python3.pkgs; [ cython pip ];
   buildInputs = [
     zlib
-    pythonPackages.wheel
+    python3.pkgs.wheel
   ];
 
   # tests need an own data, log directory
@@ -169,12 +158,12 @@ pythonPackages.buildPythonApplication rec {
 
   # speaklater3 is seperate because when passing buildDeps
   # to the test, it fails there due to a collision with speaklater
-  propagatedBuildInputs = buildDeps ++ [ pythonPackages.speaklater3 ];
+  propagatedBuildInputs = buildDeps ++ [ python3.pkgs.speaklater3 ];
 
   passthru.tests = {
     standalone = nixosTests.pgadmin4-standalone;
     # regression and function tests of the package itself
-    package = import ../../../../nixos/tests/pgadmin4.nix { inherit pkgs buildDeps; pythonEnv = pythonPackages; };
+    package = import ../../../../nixos/tests/pgadmin4.nix { inherit pkgs buildDeps; pythonEnv = python3.pkgs; };
   };
 
   meta = with lib; {
