@@ -1,34 +1,51 @@
 { lib
 , stdenv
 , fetchFromGitHub
-, fetchpatch
 , cmake
 , pkg-config
 , wrapGAppsHook
+, ebook_tools
 , freetype
+, ghostscript_headless
+, git
 , gtk3
+, libdatrie
 , libepoxy
+, libpsl
 , libpthreadstubs
+, libselinux
+, libsepol
+, libsysprof-capture
+, libthai
 , libXdmcp
 , libxkbcommon
+, libxml2
 , libxshmfence
+, libXtst
+, man
 , pcre
+, pcre2
 , poppler
+, sqlite
+, util-linuxMinimal
+, webkitgtk_4_1
 , nix-update-script
 }:
 
 stdenv.mkDerivation rec {
-  version = "0.1.5";
+  version = "0.5.0";
   pname = "apvlv";
 
   src = fetchFromGitHub {
     owner = "naihe2010";
     repo = "apvlv";
-    rev = "v${version}";
-    sha256 = "1n4xiic8lqnv3mqi7wpdv866gyyakax71gffv3n9427rmcld465i";
+    rev = "refs/tags/v${version}";
+    hash = "sha256-iflwIYirazjV8OT+doeCMszLm0OoXsmJkvSXim1tWd8=";
   };
 
-  env.NIX_CFLAGS_COMPILE = "-I${poppler.dev}/include/poppler";
+  env.NIX_CFLAGS_COMPILE = toString [
+    "-I${poppler.dev}/include/poppler"
+  ];
 
   nativeBuildInputs = [
     cmake
@@ -37,32 +54,31 @@ stdenv.mkDerivation rec {
   ];
 
   buildInputs = [
+    ebook_tools
     freetype
+    ghostscript_headless
+    git
     gtk3
+    libdatrie
     libepoxy
+    libpsl
     libpthreadstubs
+    libselinux
+    libsepol
+    libsysprof-capture
+    libthai
     libXdmcp
     libxkbcommon
+    libxml2
     libxshmfence
+    libXtst
+    man
     pcre
+    pcre2
     poppler
-  ];
-
-  patches = [
-    (fetchpatch {
-      url = "https://github.com/naihe2010/apvlv/commit/d432635b9c5ea6c052a2ae1fb71aedec5c4ad57a.patch";
-      sha256 = "1am8dgv2kkpqmm2vaysa61czx8ppdx94zb3c59sx88np50jpy70w";
-    })
-    (fetchpatch {
-      url = "https://github.com/naihe2010/apvlv/commit/4c7a583e8431964def482e5471f02e6de8e62a7b.patch";
-      sha256 = "1dszm120lwm90hcg5zmd4vr6pjyaxc84qmb7k0fr59mmb3qif62j";
-    })
-    # fix build with gcc7
-    (fetchpatch {
-      url = "https://github.com/naihe2010/apvlv/commit/a3a895772a27d76dab0c37643f0f4c73f9970e62.patch";
-      sha256 = "1fpc7wr1ajilvwi5gjsy5g9jcx4bl03gp5dmajg90ljqbhwz2bfi";
-    })
-    ./fix-build-with-poppler-0.73.0.patch
+    sqlite
+    util-linuxMinimal
+    webkitgtk_4_1
   ];
 
   installPhase = ''
@@ -83,15 +99,14 @@ stdenv.mkDerivation rec {
 
   meta = with lib; {
     homepage = "http://naihe2010.github.io/apvlv/";
+    changelog = "https://github.com/naihe2010/apvlv/blob/v${version}/NEWS";
     description = "PDF viewer with Vim-like behaviour";
     longDescription = ''
       apvlv is a PDF/DJVU/UMD/TXT Viewer Under Linux/WIN32
       with Vim-like behaviour.
     '';
-
     license = licenses.lgpl2;
     platforms = platforms.linux;
     maintainers = [ maintainers.ardumont ];
   };
-
 }
