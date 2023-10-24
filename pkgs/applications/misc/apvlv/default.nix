@@ -14,6 +14,7 @@
 , libxshmfence
 , pcre
 , poppler
+, nix-update-script
 }:
 
 stdenv.mkDerivation rec {
@@ -77,6 +78,8 @@ stdenv.mkDerivation rec {
   + lib.optionalString (!stdenv.isDarwin) ''
     install -D ../apvlv.desktop $out/share/applications/apvlv.desktop
   '';
+
+  passthru.updateScript = nix-update-script { };
 
   meta = with lib; {
     homepage = "http://naihe2010.github.io/apvlv/";
