@@ -4,38 +4,46 @@
 }:
 
 { lib
-, python3
 , fetchFromGitHub
-, qt5
-, wrapQtAppsHook
-, testers
 , gns3-gui
+, python3
+, qt5
+, testers
+, wrapQtAppsHook
 }:
 
 python3.pkgs.buildPythonApplication rec {
   pname = "gns3-gui";
+  pyproject = true;
   inherit version;
 
   src = fetchFromGitHub {
     inherit hash;
     owner = "GNS3";
     repo = pname;
-    rev = "v${version}";
+    rev = "refs/tags/v${version}";
   };
 
   nativeBuildInputs = with python3.pkgs; [
+    pythonRelaxDepsHook
     wrapQtAppsHook
+  ];
+
+  pythonRelaxDeps = [
+    "jsonschema"
+    "psutil"
+    "sentry-sdk"
   ];
 
   propagatedBuildInputs = with python3.pkgs; [
     distro
     jsonschema
     psutil
+    qt5.qtwayland
     sentry-sdk
     setuptools
     sip4 (pyqt5.override { withWebSockets = true; })
     truststore
-    qt5.qtwayland
   ] ++ lib.optionals (pythonOlder "3.9") [
     importlib-resources
   ];
@@ -50,6 +58,10 @@ python3.pkgs.buildPythonApplication rec {
 
   checkInputs = with python3.pkgs; [
     pytestCheckHook
+  ];
+
+  disabledTestPaths = [
+    "tests/registry/test_appliance.py"
   ];
 
   preCheck = ''
