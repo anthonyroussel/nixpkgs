@@ -872,7 +872,7 @@ in {
   rtorrent = handleTest ./rtorrent.nix {};
   rxe = handleTest ./rxe.nix {};
   sabnzbd = handleTest ./sabnzbd.nix {};
-  samba = handleTest ./samba.nix {};
+  samba = handleTest ./samba {};
   samba-wsdd = handleTest ./samba-wsdd.nix {};
   sane = handleTest ./sane.nix {};
   sanoid = handleTest ./sanoid.nix {};
