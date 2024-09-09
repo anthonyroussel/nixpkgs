@@ -961,6 +961,7 @@
   ./services/network-filesystems/orangefs/server.nix
   ./services/network-filesystems/rsyncd.nix
   ./services/network-filesystems/samba-wsdd.nix
+  ./services/network-filesystems/samba/ad-dc.nix
   ./services/network-filesystems/samba/default.nix
   ./services/network-filesystems/tahoe.nix
   ./services/network-filesystems/u9fs.nix

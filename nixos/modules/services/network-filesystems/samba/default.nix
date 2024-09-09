@@ -169,7 +169,9 @@ in
       }
 
       (lib.mkIf cfg.enable {
-        environment.etc."samba/smb.conf".source = configFile;
+        environment.etc."samba/smb.conf" = lib.mkIf (cfg.settings != {} ) {
+          source = configFile;
+        };
 
         system.nssModules = lib.optional cfg.nsswins cfg.package;
         system.nssDatabases.hosts = lib.optional cfg.nsswins "wins";

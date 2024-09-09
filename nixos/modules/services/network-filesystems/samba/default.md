@@ -39,3 +39,45 @@ which is read-only and accessible without authentication:
   };
 }
 ```
+
+### AD DC server {#module-services-samba-configuring-ad-dc-server}
+
+```nix
+{
+  services.samba = {
+    enable = true;
+
+    ad-dc = {
+      enable = true;
+      ensureDomain = {
+        enable = true;
+        domain = "EXAMPLE";
+        realm = "EXAMPLE.LOCAL";
+        extraArgs = [ "--adminpass=Passw0rd" "--use-rfc2307" ];
+      };
+    };
+
+    settings = {
+      global = {
+        "idmap_ldb:use rfc2307" = "yes";
+        "netbios name" = "DC";
+        "realm" = "EXAMPLE.LOCAL";
+        "server role" = "active directory domain controller";
+        "workgroup" = "EXAMPLE";
+      };
+      netlogon = {
+        path = "/var/lib/samba/sysvol/example.local/scripts";
+        "read only" = "No";
+      };
+      sysvol = {
+        path = "/var/lib/samba/sysvol";
+        "read only" = "No";
+      };
+    };
+
+    nmbd.enable = false;
+    smbd.enable = false;
+    winbind.enable = false;
+  };
+}
+```
