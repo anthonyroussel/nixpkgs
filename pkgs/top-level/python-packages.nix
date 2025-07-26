@@ -11547,6 +11547,8 @@ self: super: with self; {
 
   piexif = callPackage ../development/python-modules/piexif { };
 
+  pifpaf = callPackage ../development/python-modules/pifpaf { };
+
   pigpio = toPythonModule (
     pkgs.pigpio.override {
       inherit buildPythonPackage;

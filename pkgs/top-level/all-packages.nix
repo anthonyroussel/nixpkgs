@@ -13385,6 +13385,8 @@ with pkgs;
 
   inherit (pidginPackages) pidgin;
 
+  pifpaf = with python3Packages; toPythonApplication pifpaf;
+
   pithos = callPackage ../applications/audio/pithos {
     pythonPackages = python3Packages;
   };
