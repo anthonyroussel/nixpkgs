@@ -9,6 +9,8 @@
   decorator,
   stevedore,
   typing-extensions,
+
+  python-binary-memcached,
 }:
 
 buildPythonPackage rec {
@@ -36,6 +38,12 @@ buildPythonPackage rec {
     pytestCheckHook
     mako
   ];
+
+  optional-dependencies = {
+    bmemcached = [
+      python-binary-memcached
+    ];
+  };
 
   meta = with lib; {
     description = "Caching front-end based on the Dogpile lock";
