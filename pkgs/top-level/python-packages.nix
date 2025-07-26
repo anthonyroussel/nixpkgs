@@ -11057,6 +11057,8 @@ self: super: with self; {
 
   oslo-service = callPackage ../development/python-modules/oslo-service { };
 
+  oslo-upgradecheck = callPackage ../development/python-modules/oslo-upgradecheck { };
+
   oslo-utils = callPackage ../development/python-modules/oslo-utils { };
 
   oslotest = callPackage ../development/python-modules/oslotest { };
