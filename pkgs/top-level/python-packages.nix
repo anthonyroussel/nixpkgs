@@ -12454,6 +12454,8 @@ self: super: with self; {
 
   pybullet = callPackage ../development/python-modules/pybullet { };
 
+  pycadf = callPackage ../development/python-modules/pycadf { };
+
   pycairo = callPackage ../development/python-modules/pycairo { inherit (pkgs.buildPackages) meson; };
 
   pycangjie = callPackage ../development/python-modules/pycangjie {
