@@ -11031,6 +11031,8 @@ self: super: with self; {
 
   oslex = callPackage ../development/python-modules/oslex { };
 
+  oslo-cache = callPackage ../development/python-modules/oslo-cache { };
+
   oslo-concurrency = callPackage ../development/python-modules/oslo-concurrency { };
 
   oslo-config = callPackage ../development/python-modules/oslo-config { };
