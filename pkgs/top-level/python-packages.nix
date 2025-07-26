@@ -7714,6 +7714,8 @@ self: super: with self; {
 
   keystoneauth1 = callPackage ../development/python-modules/keystoneauth1 { };
 
+  keystonemiddleware = callPackage ../development/python-modules/keystonemiddleware { };
+
   keyutils = callPackage ../development/python-modules/keyutils { inherit (pkgs) keyutils; };
 
   kfactory = callPackage ../development/python-modules/kfactory { };
