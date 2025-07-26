@@ -5553,6 +5553,8 @@ self: super: with self; {
 
   future-typing = callPackage ../development/python-modules/future-typing { };
 
+  futurist = callPackage ../development/python-modules/futurist { };
+
   fuzzyfinder = callPackage ../development/python-modules/fuzzyfinder { };
 
   fuzzytm = callPackage ../development/python-modules/fuzzytm { };
