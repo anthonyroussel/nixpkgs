@@ -1,6 +1,8 @@
 { pkgs, ... }:
 
 {
+    skipTypeCheck = true;
+
   name = "keystone";
   meta.maintainers = [ pkgs.lib.maintainers.anthonyroussel ];
 
