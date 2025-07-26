@@ -14442,6 +14442,10 @@ self: super: with self; {
 
   python-binance = callPackage ../development/python-modules/python-binance { };
 
+  python-binary-memcached = callPackage ../development/python-modules/python-binary-memcached {
+    inherit (pkgs) memcached;
+  };
+
   python-bitcoinlib = callPackage ../development/python-modules/python-bitcoinlib { };
 
   python-box = callPackage ../development/python-modules/python-box { };
