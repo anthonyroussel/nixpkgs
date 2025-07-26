@@ -11051,6 +11051,8 @@ self: super: with self; {
 
   oslo-middleware = callPackage ../development/python-modules/oslo-middleware { };
 
+  oslo-policy = callPackage ../development/python-modules/oslo-policy { };
+
   oslo-serialization = callPackage ../development/python-modules/oslo-serialization { };
 
   oslo-utils = callPackage ../development/python-modules/oslo-utils { };
