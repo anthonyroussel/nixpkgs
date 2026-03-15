@@ -10,13 +10,13 @@
 stdenv.mkDerivation (finalAttrs: {
   pname = "aws-c-compression";
   # nixpkgs-update: no auto update
-  version = "0.3.1";
+  version = "0.3.2";
 
   src = fetchFromGitHub {
     owner = "awslabs";
     repo = "aws-c-compression";
     rev = "v${finalAttrs.version}";
-    sha256 = "sha256-gpru+hnppgLHhcPfVBOaMdcT6e8wUjZmY7Caaa/KAW4=";
+    sha256 = "sha256-YckyQZNk+48g5jrT4q8Clmy4LRwswKONvFbVtJxgpYQ=";
   };
 
   nativeBuildInputs = [
@@ -30,6 +30,8 @@ stdenv.mkDerivation (finalAttrs: {
   cmakeFlags = [
     "-DBUILD_SHARED_LIBS=ON"
   ];
+
+  doCheck = true;
 
   passthru.tests = {
     inherit nix;
