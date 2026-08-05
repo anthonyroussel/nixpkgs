@@ -11,7 +11,7 @@
 
 stdenv.mkDerivation (finalAttrs: {
   pname = "liberasurecode";
-  version = "1.6.5";
+  version = "1.8.0";
 
   outputs = [
     "out"
@@ -23,8 +23,10 @@ stdenv.mkDerivation (finalAttrs: {
     owner = "openstack";
     repo = "liberasurecode";
     tag = finalAttrs.version;
-    hash = "sha256-242p6lyLM+0UpuYvQqz87Z1S0oayxGXz7CZJW7fbgBk=";
+    hash = "sha256-y1xdirwu7vgIICnL30R3XJmCym4pjvVf0N9L4g6gyCg=";
   };
+
+  dontDisableStatic = true;
 
   postPatch = ''
     substituteInPlace doc/doxygen.cfg.in \
