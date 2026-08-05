@@ -1,0 +1,40 @@
+liberasurecode dlopen()s its built-in backends by leaf name. On Darwin dyld
+only resolves a leaf name through DYLD_*_PATH (not @rpath), so the backends are
+reported as unavailable at runtime (e.g. pyeclib failing to find
+liberasurecode_rs_vand on aarch64-darwin). The backends are installed next to
+the main library, so load them relative to it via @loader_path, which dyld does
+resolve for dlopen().
+
+--- a/src/backends/rs_vand/liberasurecode_rs_vand.c
++++ b/src/backends/rs_vand/liberasurecode_rs_vand.c
+@@ -38,7 +38,7 @@
+ #define LIBERASURECODE_RS_VAND_LIB_VER_STR "1.0"
+ #define LIBERASURECODE_RS_VAND_LIB_NAME "liberasurecode_rs_vand"
+ #if defined(__MACOS__) || defined(__MACOSX__) || defined(__OSX__) || defined(__APPLE__)
+-#define LIBERASURECODE_RS_VAND_SO_NAME "liberasurecode_rs_vand" LIBERASURECODE_SO_SUFFIX ".dylib"
++#define LIBERASURECODE_RS_VAND_SO_NAME "@loader_path/liberasurecode_rs_vand" LIBERASURECODE_SO_SUFFIX ".dylib"
+ #else
+ #define LIBERASURECODE_RS_VAND_SO_NAME "liberasurecode_rs_vand" LIBERASURECODE_SO_SUFFIX ".so.1"
+ #endif
+--- a/src/backends/null/null.c
++++ b/src/backends/null/null.c
+@@ -37,7 +37,7 @@
+ #define NULL_LIB_VER_STR "1.0"
+ #define NULL_LIB_NAME "null"
+ #if defined(__MACOS__) || defined(__MACOSX__) || defined(__OSX__) || defined(__APPLE__)
+-#define NULL_SO_NAME "libnullcode" LIBERASURECODE_SO_SUFFIX ".dylib"
++#define NULL_SO_NAME "@loader_path/libnullcode" LIBERASURECODE_SO_SUFFIX ".dylib"
+ #else
+ #define NULL_SO_NAME "libnullcode" LIBERASURECODE_SO_SUFFIX ".so.1"
+ #endif
+--- a/src/backends/xor/flat_xor_hd.c
++++ b/src/backends/xor/flat_xor_hd.c
+@@ -39,7 +39,7 @@
+ #define FLAT_XOR_LIB_VER_STR "1.0"
+ #define FLAT_XOR_LIB_NAME "flat_xor_hd"
+ #if defined(__MACOS__) || defined(__MACOSX__) || defined(__OSX__) || defined(__APPLE__)
+-#define FLAT_XOR_SO_NAME "libXorcode" LIBERASURECODE_SO_SUFFIX ".dylib"
++#define FLAT_XOR_SO_NAME "@loader_path/libXorcode" LIBERASURECODE_SO_SUFFIX ".dylib"
+ #else
+ #define FLAT_XOR_SO_NAME "libXorcode" LIBERASURECODE_SO_SUFFIX ".so.1"
+ #endif

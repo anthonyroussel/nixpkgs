@@ -26,7 +26,14 @@ stdenv.mkDerivation (finalAttrs: {
     hash = "sha256-y1xdirwu7vgIICnL30R3XJmCym4pjvVf0N9L4g6gyCg=";
   };
 
+  patches = [
+    ./darwin-backend-loader-path.patch
+  ];
+
   strictDeps = true;
+
+  # 1.8.0 made int_alg_sig internal; the test suite links it statically,
+  # so keep the static archives around for checkPhase.
   dontDisableStatic = true;
 
   postPatch = ''
