@@ -18,13 +18,13 @@
 
 stdenv.mkDerivation (finalAttrs: {
   pname = "powertop";
-  version = "2.15";
+  version = "2.16.1";
 
   src = fetchFromGitHub {
     owner = "fenrus75";
     repo = "powertop";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-53jfqt0dtMqMj3W3m6ravUTzApLQcljDHfdXejeZa4M=";
+    hash = "sha256-s60ToU99Oercf56icoowjS4L2FRFmB+KN7i3pEmsw4w=";
   };
 
   outputs = [
