@@ -28,7 +28,7 @@ rustPlatform.buildRustPackage (finalAttrs: {
   meta = {
     description = "Terminal math rendering engine with LaTeX support";
     homepage = "https://github.com/thatmagicalcat/txm";
-    changelog = "https://github.com/thatmagicalcat/txm/releases/tag/v${finalAttrs.src.tag}";
+    changelog = "https://github.com/thatmagicalcat/txm/releases/tag/${finalAttrs.src.tag}";
     license = with lib.licenses; [
       mit
       asl20

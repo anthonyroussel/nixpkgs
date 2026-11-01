@@ -49,7 +49,7 @@ buildPythonPackage rec {
   meta = {
     description = "Multipart serialization implementation for Kiota clients in Python";
     homepage = "https://github.com/microsoft/kiota-python/tree/main/packages/serialization/multipart";
-    changelog = "https://github.com/microsoft/kiota-python/releases/tag/microsoft-kiota-serialization-multipart-${src.tag}";
+    changelog = "https://github.com/microsoft/kiota-python/releases/tag/${src.tag}";
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ fab ];
   };

@@ -50,7 +50,7 @@ buildPythonPackage (finalAttrs: {
   meta = {
     description = "Python zipfile extensions";
     homepage = "https://github.com/danifus/pyzipper";
-    changelog = "https://github.com/danifus/pyzipper/blob/v${finalAttrs.src.tag}/HISTORY.rst";
+    changelog = "https://github.com/danifus/pyzipper/blob/${finalAttrs.src.tag}/HISTORY.rst";
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ fab ];
   };

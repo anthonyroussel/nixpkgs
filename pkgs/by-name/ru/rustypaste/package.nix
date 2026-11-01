@@ -32,7 +32,7 @@ rustPlatform.buildRustPackage (finalAttrs: {
   meta = {
     description = "Minimal file upload/pastebin service";
     homepage = "https://github.com/orhun/rustypaste";
-    changelog = "https://github.com/orhun/rustypaste/blob/v${finalAttrs.src.tag}/CHANGELOG.md";
+    changelog = "https://github.com/orhun/rustypaste/blob/${finalAttrs.src.tag}/CHANGELOG.md";
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ seqizz ];
     mainProgram = "rustypaste";

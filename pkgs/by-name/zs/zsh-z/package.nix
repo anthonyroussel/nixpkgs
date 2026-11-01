@@ -28,7 +28,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
   meta = {
     description = "Jump quickly to directories that you have visited frequently in the past, or recently";
     homepage = "https://github.com/agkozak/zsh-z";
-    changelog = "https://github.com/agkozak/zsh-z/releases/tag/v${finalAttrs.src.tag}";
+    changelog = "https://github.com/agkozak/zsh-z/releases/tag/${finalAttrs.src.tag}";
     license = lib.licenses.mit;
     platforms = lib.platforms.unix;
     maintainers = [ lib.maintainers.evalexpr ];

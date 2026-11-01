@@ -45,7 +45,7 @@ buildPythonPackage (finalAttrs: {
   meta = {
     description = "Python package for cloning complete webpages and websites to local storage";
     homepage = "https://github.com/rajatomar788/pywebcopy/";
-    changelog = "https://github.com/rajatomar788/pywebcopy/releases/tag/v${finalAttrs.src.tag}";
+    changelog = "https://github.com/rajatomar788/pywebcopy/releases/tag/${finalAttrs.src.tag}";
     license = lib.licenses.asl20;
     maintainers = [ ];
   };

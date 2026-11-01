@@ -50,7 +50,7 @@ buildPythonPackage (finalAttrs: {
   meta = {
     description = "Set of models representing data passed around across the toolchain";
     homepage = "https://github.com/Lookyloo/lookyloo-models";
-    changelog = "https://github.com/Lookyloo/lookyloo-models/releases/tag/v${finalAttrs.src.tag}";
+    changelog = "https://github.com/Lookyloo/lookyloo-models/releases/tag/${finalAttrs.src.tag}";
     license = lib.licenses.bsd3;
     maintainers = with lib.maintainers; [ fab ];
   };

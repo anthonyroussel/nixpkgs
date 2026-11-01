@@ -32,7 +32,7 @@ buildPythonPackage (finalAttrs: {
   meta = {
     description = "Module for base62 encoding";
     homepage = "https://github.com/suminb/base62";
-    changelog = "https://github.com/suminb/base62/releases/tag/v${finalAttrs.src.tag}";
+    changelog = "https://github.com/suminb/base62/releases/tag/${finalAttrs.src.tag}";
     license = lib.licenses.bsd2WithViews;
     maintainers = with lib.maintainers; [ fab ];
   };

@@ -43,7 +43,7 @@ stdenv.mkDerivation (finalAttrs: {
     description = "Lightweight tool designed to add colored borders to user windows on macOS 14.0+";
     longDescription = "It enhances the user experience by visually highlighting the currently focused window without relying on the accessibility API, thereby being faster than comparable tools.";
     homepage = "https://github.com/FelixKratz/JankyBorders";
-    changelog = "https://github.com/FelixKratz/JankyBorders/releases/tag/v${finalAttrs.src.tag}";
+    changelog = "https://github.com/FelixKratz/JankyBorders/releases/tag/${finalAttrs.src.tag}";
     license = lib.licenses.gpl3;
     mainProgram = "borders";
     maintainers = with lib.maintainers; [ khaneliman ];

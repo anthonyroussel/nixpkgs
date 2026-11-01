@@ -34,7 +34,7 @@ buildPythonPackage (finalAttrs: {
   meta = {
     description = "TypeScript grammar for tree-sitter";
     homepage = "https://github.com/tree-sitter/tree-sitter-typescript";
-    changelog = "https://github.com/tree-sitter/tree-sitter-typescript/releases/tag/v${finalAttrs.src.tag}";
+    changelog = "https://github.com/tree-sitter/tree-sitter-typescript/releases/tag/${finalAttrs.src.tag}";
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ fab ];
   };

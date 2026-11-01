@@ -46,7 +46,7 @@ buildGoModule (finalAttrs: {
   meta = {
     description = "Credential testing tool for multiple services";
     homepage = "https://github.com/praetorian-inc/brutus";
-    changelog = "https://github.com/praetorian-inc/brutus/releases/tag/v${finalAttrs.src.tag}";
+    changelog = "https://github.com/praetorian-inc/brutus/releases/tag/${finalAttrs.src.tag}";
     license = lib.licenses.asl20;
     maintainers = with lib.maintainers; [ fab ];
     mainProgram = "brutus";

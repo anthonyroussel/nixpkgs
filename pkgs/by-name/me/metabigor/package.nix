@@ -30,7 +30,7 @@ buildGoModule (finalAttrs: {
   meta = {
     description = "Tool to perform OSINT tasks";
     homepage = "https://github.com/j3ssie/metabigor";
-    changelog = "https://github.com/j3ssie/metabigor/releases/tag/v${finalAttrs.src.tag}";
+    changelog = "https://github.com/j3ssie/metabigor/releases/tag/${finalAttrs.src.tag}";
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ fab ];
     mainProgram = "metabigor";

@@ -61,7 +61,7 @@ buildPythonPackage (finalAttrs: {
   meta = {
     homepage = "https://github.com/supabase/supabase-py";
     license = lib.licenses.mit;
-    changelog = "https://github.com/supabase/supabase-py/blob/v${finalAttrs.src.tag}/CHANGELOG.md";
+    changelog = "https://github.com/supabase/supabase-py/blob/${finalAttrs.src.tag}/CHANGELOG.md";
     description = "Supabase client for Python";
     maintainers = with lib.maintainers; [
       siegema

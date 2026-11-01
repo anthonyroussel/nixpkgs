@@ -45,7 +45,7 @@ buildGoModule (finalAttrs: {
       requests, filter the responses and display them in real-time.
     '';
     homepage = "https://github.com/RedTeamPentesting/monsoon";
-    changelog = "https://github.com/RedTeamPentesting/monsoon/releases/tag/v${finalAttrs.src.tag}";
+    changelog = "https://github.com/RedTeamPentesting/monsoon/releases/tag/${finalAttrs.src.tag}";
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ fab ];
     mainProgram = "monsoon";

@@ -32,7 +32,7 @@ buildGoModule (finalAttrs: {
   meta = {
     description = "Tool to scans Software Bill of Materials (SBOMs) for vulnerabilities";
     homepage = "https://github.com/devops-kung-fu/bomber";
-    changelog = "https://github.com/devops-kung-fu/bomber/releases/tag/v${finalAttrs.src.tag}";
+    changelog = "https://github.com/devops-kung-fu/bomber/releases/tag/${finalAttrs.src.tag}";
     license = lib.licenses.mpl20;
     maintainers = with lib.maintainers; [ fab ];
     mainProgram = "bomber";

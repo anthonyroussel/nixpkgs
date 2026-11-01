@@ -70,7 +70,7 @@ stdenv.mkDerivation (finalAttrs: {
   meta = {
     description = "C++ Library for EUROCONTROL's ASTERIX to JSON conversion";
     homepage = "https://github.com/OpenATSGmbH/jASTERIX";
-    changelog = "https://github.com/OpenATSGmbH/jASTERIX/releases/tag/v${finalAttrs.src.tag}";
+    changelog = "https://github.com/OpenATSGmbH/jASTERIX/releases/tag/${finalAttrs.src.tag}";
     maintainers = [ lib.maintainers.vog ];
     license = lib.licenses.gpl3Plus;
     platforms = lib.platforms.all;

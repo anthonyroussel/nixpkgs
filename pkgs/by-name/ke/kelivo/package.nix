@@ -72,7 +72,7 @@ flutter344.buildFlutterApplication (finalAttrs: {
     description = "Flutter LLM Chat Client";
     homepage = "https://kelivo.psycheas.top/";
     downloadPage = "https://github.com/Chevey339/kelivo/releases";
-    changelog = "https://github.com/Chevey339/kelivo/releases/tag/v${finalAttrs.src.tag}";
+    changelog = "https://github.com/Chevey339/kelivo/releases/tag/${finalAttrs.src.tag}";
     license = lib.licenses.agpl3Plus;
     maintainers = with lib.maintainers; [ chillcicada ];
     platforms = lib.platforms.linux;

@@ -29,7 +29,7 @@ buildGoModule (finalAttrs: {
       and a unique result scoring system.
     '';
     homepage = "https://github.com/tillson/git-hound";
-    changelog = "https://github.com/tillson/git-hound/releases/tag/v${finalAttrs.src.tag}";
+    changelog = "https://github.com/tillson/git-hound/releases/tag/${finalAttrs.src.tag}";
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ fab ];
     mainProgram = "git-hound";

@@ -52,7 +52,7 @@ buildPythonPackage (finalAttrs: {
   meta = {
     description = "RAR archive reader for Python";
     homepage = "https://github.com/markokr/rarfile";
-    changelog = "https://github.com/markokr/rarfile/releases/tag/v${finalAttrs.src.tag}";
+    changelog = "https://github.com/markokr/rarfile/releases/tag/${finalAttrs.src.tag}";
     license = lib.licenses.isc;
     maintainers = [ ];
   };

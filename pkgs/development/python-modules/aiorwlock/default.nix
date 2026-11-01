@@ -31,7 +31,7 @@ buildPythonPackage (finalAttrs: {
   meta = {
     description = "Read write lock for asyncio";
     homepage = "https://github.com/aio-libs/aiorwlock";
-    changelog = "https://github.com/aio-libs/aiorwlock/releases/tag/v${finalAttrs.src.tag}";
+    changelog = "https://github.com/aio-libs/aiorwlock/releases/tag/${finalAttrs.src.tag}";
     license = lib.licenses.asl20;
     maintainers = with lib.maintainers; [ billhuang ];
   };

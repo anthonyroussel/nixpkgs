@@ -49,7 +49,7 @@ buildPythonPackage (finalAttrs: {
   meta = {
     description = "Translation toolset";
     homepage = "https://github.com/wichert/lingua";
-    changelog = "https://github.com/wichert/lingua/releases/tag/v${finalAttrs.src.tag}";
+    changelog = "https://github.com/wichert/lingua/releases/tag/${finalAttrs.src.tag}";
     license = lib.licenses.bsd3;
     maintainers = with lib.maintainers; [ np ];
   };

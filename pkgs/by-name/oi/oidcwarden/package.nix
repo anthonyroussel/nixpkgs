@@ -39,7 +39,7 @@ rustPlatform.buildRustPackage (finalAttrs: {
   meta = {
     description = "Unofficial Bitwarden-compatible server with OpenID Connect support";
     homepage = "https://github.com/Timshel/OIDCWarden";
-    changelog = "https://github.com/Timshel/OIDCWarden/releases/tag/v${finalAttrs.src.tag}";
+    changelog = "https://github.com/Timshel/OIDCWarden/releases/tag/${finalAttrs.src.tag}";
     license = lib.licenses.agpl3Only;
     maintainers = with lib.maintainers; [ DerGrumpf ];
     mainProgram = "oidcwarden";

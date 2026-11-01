@@ -44,7 +44,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
   meta = {
     description = "Typeface made for developers";
     homepage = "https://jetbrains.com/mono/";
-    changelog = "https://github.com/JetBrains/JetBrainsMono/blob/v${finalAttrs.src.tag}/Changelog.md";
+    changelog = "https://github.com/JetBrains/JetBrainsMono/blob/${finalAttrs.src.tag}/Changelog.md";
     license = lib.licenses.ofl;
     maintainers = with lib.maintainers; [
       vinnymeller

@@ -43,7 +43,7 @@ buildPythonPackage (finalAttrs: {
   meta = {
     description = "Python module to emulate the date math used in SOLR and Elasticsearch";
     homepage = "https://github.com/nickmaccarthy/python-datemath";
-    changelog = "https://github.com/nickmaccarthy/python-datemath/blob/v${finalAttrs.src.tag}/CHANGELOG.md";
+    changelog = "https://github.com/nickmaccarthy/python-datemath/blob/${finalAttrs.src.tag}/CHANGELOG.md";
     license = lib.licenses.asl20;
     maintainers = with lib.maintainers; [ fab ];
   };

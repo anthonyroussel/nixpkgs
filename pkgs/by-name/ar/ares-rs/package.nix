@@ -31,7 +31,7 @@ rustPlatform.buildRustPackage (finalAttrs: {
   meta = {
     description = "Automated decoding of encrypted text without knowing the key or ciphers used";
     homepage = "https://github.com/bee-san/ares";
-    changelog = "https://github.com/bee-san/Ares/releases/tag/v${finalAttrs.src.tag}";
+    changelog = "https://github.com/bee-san/Ares/releases/tag/${finalAttrs.src.tag}";
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ fab ];
     mainProgram = "ares";

@@ -40,7 +40,7 @@ buildPythonPackage (finalAttrs: {
   meta = {
     description = "Sphinx extension to include program output";
     homepage = "https://github.com/NextThought/sphinxcontrib-programoutput";
-    changelog = "https://github.com/NextThought/sphinxcontrib-programoutput/releases/tag/v${finalAttrs.src.tag}";
+    changelog = "https://github.com/NextThought/sphinxcontrib-programoutput/releases/tag/${finalAttrs.src.tag}";
     license = lib.licenses.bsd2;
     maintainers = [ ];
   };

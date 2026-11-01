@@ -29,7 +29,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
   meta = {
     description = "Soothing pastel theme for Home Assistant";
     homepage = "https://github.com/catppuccin/home-assistant";
-    changelog = "https://github.com/catppuccin/home-assistant/releases/tag/v${finalAttrs.src.tag}";
+    changelog = "https://github.com/catppuccin/home-assistant/releases/tag/${finalAttrs.src.tag}";
     license = lib.licenses.mit;
     maintainers = [ lib.maintainers.CardboardTurkey ];
   };

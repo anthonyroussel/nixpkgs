@@ -26,7 +26,7 @@ rustPlatform.buildRustPackage (finalAttrs: {
     description = "Cargo build wrapper with a live, animated status view";
     homepage = "https://crates.io/crates/cargo-pretty-build";
     downloadPage = "https://github.com/romancitodev/cargo-pretty/releases";
-    changelog = "https://github.com/romancitodev/cargo-pretty/releases/tag/v${finalAttrs.src.tag}";
+    changelog = "https://github.com/romancitodev/cargo-pretty/releases/tag/${finalAttrs.src.tag}";
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ VZstless ];
     mainProgram = "cargo-pretty";

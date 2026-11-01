@@ -40,7 +40,7 @@ buildPythonPackage (finalAttrs: {
   meta = {
     description = "Library for advanced object-relational mapping";
     homepage = "https://ponyorm.org/";
-    changelog = "https://github.com/ponyorm/pony/releases/tag/v${finalAttrs.src.tag}";
+    changelog = "https://github.com/ponyorm/pony/releases/tag/${finalAttrs.src.tag}";
     license = lib.licenses.asl20;
     maintainers = with lib.maintainers; [
       d-goldin

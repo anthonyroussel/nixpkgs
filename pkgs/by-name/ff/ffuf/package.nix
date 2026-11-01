@@ -43,7 +43,7 @@ buildGoModule (finalAttrs: {
       or web servers.
     '';
     homepage = "https://github.com/ffuf/ffuf";
-    changelog = "https://github.com/ffuf/ffuf/releases/tag/v${finalAttrs.src.tag}";
+    changelog = "https://github.com/ffuf/ffuf/releases/tag/${finalAttrs.src.tag}";
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ fab ];
     mainProgram = "ffuf";

@@ -59,7 +59,7 @@ buildPythonPackage (finalAttrs: {
   meta = {
     description = "Python API wrapper for the Censys Search Engine (censys.io)";
     homepage = "https://github.com/censys/censys-python";
-    changelog = "https://github.com/censys/censys-python/releases/tag/v${finalAttrs.src.tag}";
+    changelog = "https://github.com/censys/censys-python/releases/tag/${finalAttrs.src.tag}";
     license = lib.licenses.asl20;
     maintainers = with lib.maintainers; [ fab ];
     mainProgram = "censys";

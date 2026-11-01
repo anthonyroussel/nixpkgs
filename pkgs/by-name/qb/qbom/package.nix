@@ -49,7 +49,7 @@ python3.pkgs.buildPythonApplication (finalAttrs: {
   meta = {
     description = "Quantum Bill of Materials (QBOM) tool";
     homepage = "https://github.com/csnp/qbom";
-    changelog = "https://github.com/csnp/qbom/releases/tag/v${finalAttrs.src.tag}";
+    changelog = "https://github.com/csnp/qbom/releases/tag/${finalAttrs.src.tag}";
     license = lib.licenses.asl20;
     maintainers = with lib.maintainers; [ fab ];
     mainProgram = "qbom";

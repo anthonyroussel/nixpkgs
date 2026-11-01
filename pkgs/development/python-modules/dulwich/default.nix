@@ -110,7 +110,7 @@ buildPythonPackage (finalAttrs: {
       does not depend on Git itself. All functionality is available in pure Python.
     '';
     homepage = "https://www.dulwich.io/";
-    changelog = "https://github.com/jelmer/dulwich/blob/dulwich-${finalAttrs.src.tag}/NEWS";
+    changelog = "https://github.com/jelmer/dulwich/blob/${finalAttrs.src.tag}/NEWS";
     license = with lib.licenses; [
       asl20
       gpl2Plus

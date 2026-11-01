@@ -35,7 +35,7 @@ buildGoModule (finalAttrs: {
 
   meta = {
     homepage = "https://github.com/controlplaneio/badrobot";
-    changelog = "https://github.com/controlplaneio/badrobot/releases/tag/v${finalAttrs.src.tag}";
+    changelog = "https://github.com/controlplaneio/badrobot/releases/tag/${finalAttrs.src.tag}";
     description = "Operator Security Audit Tool";
     mainProgram = "badrobot";
     longDescription = ''

@@ -105,7 +105,7 @@ buildNpmPackage (finalAttrs: {
   meta = {
     description = "GUI inspector for the appium UI automation tool";
     homepage = "https://appium.github.io/appium-inspector";
-    changelog = "https://github.com/appium/appium-inspector/releases/tag/v${finalAttrs.src.tag}";
+    changelog = "https://github.com/appium/appium-inspector/releases/tag/${finalAttrs.src.tag}";
     license = lib.licenses.asl20;
     mainProgram = "appium-inspector";
     maintainers = with lib.maintainers; [ marie ];

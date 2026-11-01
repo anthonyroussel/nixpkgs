@@ -108,7 +108,7 @@ buildGoModule (finalAttrs: {
   meta = {
     description = "The official CLI for Lark/Feishu open platform";
     homepage = "https://github.com/larksuite/cli";
-    changelog = "https://github.com/larksuite/cli/releases/tag/v${finalAttrs.src.tag}";
+    changelog = "https://github.com/larksuite/cli/releases/tag/${finalAttrs.src.tag}";
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ zehuajun ];
     mainProgram = "lark-cli";

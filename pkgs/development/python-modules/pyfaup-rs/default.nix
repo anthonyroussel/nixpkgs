@@ -37,7 +37,7 @@ buildPythonPackage (finalAttrs: {
   meta = {
     description = "Url parsing library";
     homepage = "https://github.com/ail-project/faup-rs";
-    changelog = "https://github.com/ail-project/faup-rs/releases/tag/pyfaup-rs-${finalAttrs.src.tag}";
+    changelog = "https://github.com/ail-project/faup-rs/releases/tag/${finalAttrs.src.tag}";
     license = lib.licenses.gpl3Only;
     maintainers = with lib.maintainers; [ fab ];
   };

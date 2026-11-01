@@ -60,7 +60,7 @@ buildPythonPackage (finalAttrs: {
   meta = {
     description = "Python module for the Alpha Vantage API";
     homepage = "https://github.com/RomelTorres/alpha_vantage";
-    changelog = "https://github.com/RomelTorres/alpha_vantage/releases/tag/v${finalAttrs.src.tag}";
+    changelog = "https://github.com/RomelTorres/alpha_vantage/releases/tag/${finalAttrs.src.tag}";
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ fab ];
   };

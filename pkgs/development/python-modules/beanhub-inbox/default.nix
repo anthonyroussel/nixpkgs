@@ -50,7 +50,7 @@ buildPythonPackage rec {
   meta = {
     description = "Email processing engine for archiving and extracting financial data with LLM";
     homepage = "https://github.com/LaunchPlatform/beanhub-inbox";
-    changelog = "https://github.com/LaunchPlatform/beanhub-inbox/releases/tag${src.tag}";
+    changelog = "https://github.com/LaunchPlatform/beanhub-inbox/releases/tag/${src.tag}";
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ fab ];
   };

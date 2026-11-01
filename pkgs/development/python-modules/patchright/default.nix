@@ -42,7 +42,7 @@ buildPythonPackage (finalAttrs: {
     broken = true;
     description = "Undetected Python version of the Playwright testing and automation library";
     homepage = "https://github.com/Kaliiiiiiiiii-Vinyzu/patchright-python";
-    changelog = "https://github.com/Kaliiiiiiiiii-Vinyzu/patchright-python/releases/tag/v${finalAttrs.src.tag}";
+    changelog = "https://github.com/Kaliiiiiiiiii-Vinyzu/patchright-python/releases/tag/${finalAttrs.src.tag}";
     license = lib.licenses.asl20;
     maintainers = with lib.maintainers; [ fab ];
   };

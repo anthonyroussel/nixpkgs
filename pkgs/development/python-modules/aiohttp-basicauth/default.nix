@@ -34,7 +34,7 @@ buildPythonPackage (finalAttrs: {
   meta = {
     description = "HTTP basic authentication middleware for aiohttp";
     homepage = "https://github.com/romis2012/aiohttp-basicauth";
-    changelog = "https://github.com/romis2012/aiohttp-basicauth/releases/tag/v${finalAttrs.src.tag}";
+    changelog = "https://github.com/romis2012/aiohttp-basicauth/releases/tag/${finalAttrs.src.tag}";
     license = lib.licenses.asl20;
     maintainers = [ ];
   };

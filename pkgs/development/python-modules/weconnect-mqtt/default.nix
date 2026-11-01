@@ -52,7 +52,7 @@ buildPythonPackage (finalAttrs: {
   meta = {
     description = "Python client that publishes data from Volkswagen WeConnect";
     homepage = "https://github.com/tillsteinbach/WeConnect-mqtt";
-    changelog = "https://github.com/tillsteinbach/WeConnect-mqtt/releases/tag/v${finalAttrs.src.tag}";
+    changelog = "https://github.com/tillsteinbach/WeConnect-mqtt/releases/tag/${finalAttrs.src.tag}";
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ fab ];
     mainProgram = "weconnect-mqtt";

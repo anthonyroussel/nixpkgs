@@ -34,7 +34,7 @@ buildGoModule (finalAttrs: {
   meta = {
     description = "Command line client for the Registration Data Access Protocol (RDAP)";
     homepage = "https://www.openrdap.org/";
-    changelog = "https://github.com/openrdap/rdap/releases/tag/v${finalAttrs.src.tag}";
+    changelog = "https://github.com/openrdap/rdap/releases/tag/${finalAttrs.src.tag}";
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ sebastianblunt ];
     mainProgram = "rdap";

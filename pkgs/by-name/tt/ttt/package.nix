@@ -29,7 +29,7 @@ buildGoModule (finalAttrs: {
     description = "IDE that lives in your terminal";
     homepage = "http://tttedit.dev";
     downloadPage = "https://github.com/eugenioenko/ttt";
-    changelog = "https://github.com/eugenioenko/ttt/releases/tag/v${finalAttrs.src.tag}";
+    changelog = "https://github.com/eugenioenko/ttt/releases/tag/${finalAttrs.src.tag}";
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ zendo ];
     mainProgram = "ttt";

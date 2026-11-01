@@ -64,7 +64,7 @@ buildPythonPackage (finalAttrs: {
   meta = {
     description = "Python client for the Volkswagen WeConnect Services";
     homepage = "https://github.com/tillsteinbach/WeConnect-python";
-    changelog = "https://github.com/tillsteinbach/WeConnect-python/releases/tag/v${finalAttrs.src.tag}";
+    changelog = "https://github.com/tillsteinbach/WeConnect-python/releases/tag/${finalAttrs.src.tag}";
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ fab ];
   };

@@ -36,7 +36,7 @@ buildPythonPackage (finalAttrs: {
   meta = {
     description = "Module for interacting with NETIO devices";
     homepage = "https://github.com/netioproducts/PyNetio";
-    changelog = "https://github.com/netioproducts/PyNetio/blob/v${finalAttrs.src.tag}/CHANGELOG.md";
+    changelog = "https://github.com/netioproducts/PyNetio/blob/${finalAttrs.src.tag}/CHANGELOG.md";
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ fab ];
     mainProgram = "Netio";

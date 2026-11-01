@@ -53,7 +53,7 @@ buildPythonPackage (finalAttrs: {
   meta = {
     description = "Instrumentation Tools & Auto Instrumentation for OpenTelemetry Python";
     homepage = "https://github.com/open-telemetry/opentelemetry-python-contrib/tree/main/opentelemetry-instrumentation";
-    changelog = "https://github.com/open-telemetry/opentelemetry-python-contrib/releases/tag/v${finalAttrs.src.tag}";
+    changelog = "https://github.com/open-telemetry/opentelemetry-python-contrib/releases/tag/${finalAttrs.src.tag}";
     license = lib.licenses.asl20;
     maintainers = [ lib.maintainers.natsukium ];
   };
