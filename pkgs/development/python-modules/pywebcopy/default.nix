@@ -19,7 +19,7 @@ buildPythonPackage (finalAttrs: {
   src = fetchFromGitHub {
     owner = "rajatomar788";
     repo = "pywebcopy";
-    tag = "v${finalAttrs.version}";
+    tag = finalAttrs.version;
     hash = "sha256-ee8uGg4PU1uch8cyiU7QfvdYFUVDz7obq9oC8fKkf1s=";
   };
 
